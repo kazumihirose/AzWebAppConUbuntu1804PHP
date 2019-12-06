@@ -37,3 +37,13 @@ Azure Container RegistryにPushすれば、AzureポータルからWebApp for Con
 
 コードや拡張などを導入したい場合もあるでしょう、その場合はDockerfileから任意に弄ってください。GitやSSHなども含まれていますので、ある程度コンテナ内での動作を確認したうえでカスタマイズすると良いでしょう。
 
+
+カスタマイズを行う際、以下の点に注意してください、一見tzdataを二度インストールしているように見える為、この二行は冗長であるかのように見えますが、パッケージのBugにより一度で環境変数を読み込んだTimezoneセッティングが走らない問題があります。
+この問題に対応するため、二度インストールをしています。一行になった場合はDocker Build中に停止してしまいます。
+
+```
+# timezone setting
+ENV TZ=Asia/Tokyo 
+RUN apt-get install -y tzdata
+RUN apt-get install -y tzdata
+```

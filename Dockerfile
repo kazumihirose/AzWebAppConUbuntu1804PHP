@@ -41,5 +41,5 @@ COPY index.php /var/www/html/
 # Port setting
 EXPOSE 8000 2222
 
-# Run
+# CMD
 CMD ["/usr/bin/supervisord", "-n"]
