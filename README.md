@@ -17,7 +17,7 @@ git clone https://github.com/kazumihirose/AzWebAppConUbuntu1804PHP.git
 
 ```
 $ cd AzWebAppConUbuntu1804PHP
-$ docker build --tag Ubuntu1804Php72FpmWithSsh .
+$ docker build --tag ubuntu1804_php72fpm_ssh .
 
 $ docker images
 REPOSITORY                          TAG                 IMAGE ID            CREATED             SIZE
